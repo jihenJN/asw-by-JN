@@ -50,7 +50,7 @@ export class AswMultiSelect {
     }
 
     editMultiSelectDialog(control: MultiSelectControl, controlIndex: number): void {
-        console.log("enter editMultiSelectDialog : Manages the entire workflow of editing a text field control via a dialog including ")
+        console.log("enter editMultiSelectDialog : Manages the entire workflow of editing a multi select  control via a dialog including ")
         control.options.forEach(element => {
             element.isChecked = control.value.includes(element.key) ? true : false;
         });
@@ -64,8 +64,8 @@ export class AswMultiSelect {
         console.log("2- Handling the result when the dialog is closed ")
         dialogRef.afterClosed().subscribe(result => {
             if (result !== undefined) {
-                console.log("2.1- If the result is not undefined , Emits an event named textFieldUpdateEvent: ")
-                console.log("that inform other parts of the application that the text field control has been updated")
+                console.log("2.1- If the result is not undefined , Emits an event named multiSelectUpdateEvent: ")
+                console.log("that inform other parts of the application that the multi select  control has been updated")
                 console.log("includes an object with properties:\n* control (containing the result data) \n* index (representing the index of the control being updated)")
                 console.log("Control:", result);
                 console.log("Index:", controlIndex);
